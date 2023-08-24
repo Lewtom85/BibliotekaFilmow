@@ -42,3 +42,24 @@ print(by_make)
 car = Car(make="Ford", model_name="Mustang", top_speed=250, color="red")
 car.set_current_speed(100)
 print(car.current_speed)
+
+class Truck(Car):
+    def __init__(self, max_load, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.max_load = max_load
+
+truck = Truck(make="Mercedes", model_name="Actros", color="Black", top_speed=90, max_load=1200)
+
+print(truck)
+
+print(truck.current_speed)
+print(truck.accelerate())
+print(truck.current_speed)
+
+truck =Truck(make="Mercedes", model_name="Sprinter", color="Black", top_speed=90, max_load=1200)
+
+car = Car(make="Ford", model_name="Mustang", top_speed=250, color="red")
+
+isinstance(car, Truck)
+
+isinstance(car, Car)
